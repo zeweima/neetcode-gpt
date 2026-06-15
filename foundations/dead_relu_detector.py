@@ -17,11 +17,11 @@ class Solution:
             if isinstance(layer, nn.ReLU):
                 if x.dim() >=2:
                     res.append(
-                        (x<=0).all(dim=0).float().mean().item()
+                        round((x<=0).all(dim=0).float().mean().item(),4)
                     )
                 else:
                     res.append(
-                        (x<=0).float().mean().item()
+                        round((x<=0).float().mean().item(),4)
                     )
         return res
 
