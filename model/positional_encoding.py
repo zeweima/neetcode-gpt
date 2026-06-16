@@ -22,3 +22,15 @@ class Solution:
         PE[:,::2] = np.sin(positions*div)
         PE[:,1::2] = np.cos(positions*div)
         return np.round(PE, 5)
+
+        """
+        Note: 
+            1. The dimensions of the position encoder is the same as the embedings.
+                The first dimension is the length of the sequence, and the second one
+                is the embedding dimension. 
+            2. The use of broadcast.
+                The first step of broadcast is the align the dimension, basically adding
+                1 to the left of the array. Then, check whether each dimension can be extended
+            3. The, the batch version?
+                only calcualte one, then using broadcast also,
+        """
